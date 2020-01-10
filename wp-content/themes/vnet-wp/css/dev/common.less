@@ -1,0 +1,108 @@
+body {
+  font-family: "roboto";
+  font-size: 14px;
+  font-weight: normal;
+}
+
+a,
+a:visited {
+  color: #000;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+a.bnt,
+.btn,
+button.btn,
+input.btn,
+.wpcf7-submit.btn {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+::selection {
+  background-color: rgba(255, 95, 15, 0.8);
+  color: #fff;
+}
+
+.site-wrap {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  & > * {
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .footer {
+    margin-top: auto;
+  }
+}
+
+.main-content {
+  &:extend(.pb-section);
+}
+
+.ico {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    width: 22px !important;
+    height: auto !important;
+  }
+
+  &.ico-life > * {
+    width: auto !important;
+    height: 26px !important;
+  }
+}
+
+.ico-left {
+  position: relative;
+  padding-left: 34px;
+  .ico {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 24px / 2);
+  }
+}
+
+.svg-fill,
+.svg-stroke {
+  transition: 0.3s;
+}
+
+.opacity-load {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+html {
+  margin-top: 0 !important;
+}
+body.admin-bar {
+  padding-top: 32px;
+
+  .dom-fixed-nav.nav-in-scroll .container .row {
+    padding-top: 32px;
+  }
+}

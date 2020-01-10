@@ -1,0 +1,1391 @@
+.dom-slide-up {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+/*==============================================================
+*											        	FONTS
+=============================================================== */
+.fs-16 {
+  font-size: 16px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fs-22 {
+  font-size: 22px;
+}
+.fs-24 {
+  font-size: 24px;
+}
+@media (max-width: 991.9px) {
+  .fs-24 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-24 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-24 {
+    font-size: 18px;
+  }
+}
+.fs-26 {
+  font-size: 26px;
+}
+@media (max-width: 991.9px) {
+  .fs-26 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-26 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-26 {
+    font-size: 20px;
+  }
+}
+.fs-28 {
+  font-size: 28px;
+}
+.fs-30 {
+  font-size: 30px;
+}
+.fs-32 {
+  font-size: 32px;
+}
+@media (max-width: 991.9px) {
+  .fs-32 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-32 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-32 {
+    font-size: 22px;
+  }
+}
+.fs-34 {
+  font-size: 34px;
+}
+@media (max-width: 991.9px) {
+  .fs-34 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-34 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-34 {
+    font-size: 26px;
+  }
+}
+.fs-36 {
+  font-size: 36px;
+}
+@media (max-width: 991.9px) {
+  .fs-36 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-36 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-36 {
+    font-size: 18px;
+  }
+}
+.fs-38 {
+  font-size: 38px;
+}
+@media (max-width: 991.9px) {
+  .fs-38 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-38 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-38 {
+    font-size: 30px;
+  }
+}
+.fs-40 {
+  font-size: 40px;
+}
+.fs-42 {
+  font-size: 42px;
+}
+@media (max-width: 991.9px) {
+  .fs-42 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-42 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 575.9px) {
+  .fs-42 {
+    font-size: 26px;
+  }
+}
+.fs-46 {
+  font-size: 46px;
+}
+.fs-48 {
+  font-size: 48px;
+}
+.fs-50 {
+  font-size: 50px;
+}
+@media (max-width: 991.9px) {
+  .fs-50 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-50 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 575.9px) {
+}
+.fs-80 {
+  font-size: 80px;
+}
+@media (max-width: 991.9px) {
+  .fs-80 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-80 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 767.9px) {
+  .fs-80 {
+    font-size: 38px;
+  }
+}
+.gilroy {
+  font-family: "Gilroy";
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Regular.eot');
+  src: local('Gilroy Regular'), local('../fonts/gilroy/Gilroy-Regular'), url('../fonts/gilroy/Gilroy-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Regular.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Regular.woff') format('woff'), url('../fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-ExtraboldItalic.eot');
+  src: local('Gilroy Extrabold Italic'), local('../fonts/gilroy/Gilroy-ExtraboldItalic'), url('../fonts/gilroy/Gilroy-ExtraboldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-ExtraboldItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-ExtraboldItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Bold.eot');
+  src: local('Gilroy Bold'), local('../fonts/gilroy/Gilroy-Bold'), url('../fonts/gilroy/Gilroy-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Bold.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Bold.woff') format('woff'), url('../fonts/gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Black.eot');
+  src: local('Gilroy Black'), local('../fonts/gilroy/Gilroy-Black'), url('../fonts/gilroy/Gilroy-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Black.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Black.woff') format('woff'), url('../fonts/gilroy/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Light.eot');
+  src: local('Gilroy Light'), local('../fonts/gilroy/Gilroy-Light'), url('../fonts/gilroy/Gilroy-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Light.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Light.woff') format('woff'), url('../fonts/gilroy/Gilroy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Semibold.eot');
+  src: local('Gilroy Semibold'), local('../fonts/gilroy/Gilroy-Semibold'), url('../fonts/gilroy/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Semibold.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Semibold.woff') format('woff'), url('../fonts/gilroy/Gilroy-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Medium.eot');
+  src: local('Gilroy Medium'), local('../fonts/gilroy/Gilroy-Medium'), url('../fonts/gilroy/Gilroy-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Medium.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Medium.woff') format('woff'), url('../fonts/gilroy/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-MediumItalic.eot');
+  src: local('Gilroy Medium Italic'), local('../fonts/gilroy/Gilroy-MediumItalic'), url('../fonts/gilroy/Gilroy-MediumItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-MediumItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-MediumItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-BlackItalic.eot');
+  src: local('Gilroy Black Italic'), local('../fonts/gilroy/Gilroy-BlackItalic'), url('../fonts/gilroy/Gilroy-BlackItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-BlackItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-BlackItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-UltraLight.eot');
+  src: local('Gilroy UltraLight'), local('../fonts/gilroy/Gilroy-UltraLight'), url('../fonts/gilroy/Gilroy-UltraLight.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-UltraLight.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-UltraLight.woff') format('woff'), url('../fonts/gilroy/Gilroy-UltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-RegularItalic.eot');
+  src: local('Gilroy Regular Italic'), local('../fonts/gilroy/Gilroy-RegularItalic'), url('../fonts/gilroy/Gilroy-RegularItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-RegularItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-RegularItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-SemiboldItalic.eot');
+  src: local('Gilroy Semibold Italic'), local('../fonts/gilroy/Gilroy-SemiboldItalic'), url('../fonts/gilroy/Gilroy-SemiboldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-SemiboldItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-SemiboldItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-HeavyItalic.eot');
+  src: local('Gilroy Heavy Italic'), local('../fonts/gilroy/Gilroy-HeavyItalic'), url('../fonts/gilroy/Gilroy-HeavyItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-HeavyItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-HeavyItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-HeavyItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Extrabold.eot');
+  src: local('Gilroy Extrabold'), local('../fonts/gilroy/Gilroy-Extrabold'), url('../fonts/gilroy/Gilroy-Extrabold.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Extrabold.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Extrabold.woff') format('woff'), url('../fonts/gilroy/Gilroy-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-BoldItalic.eot');
+  src: local('Gilroy Bold Italic'), local('../fonts/gilroy/Gilroy-BoldItalic'), url('../fonts/gilroy/Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-BoldItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-BoldItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-UltraLightItalic.eot');
+  src: local('Gilroy UltraLight Italic'), local('../fonts/gilroy/Gilroy-UltraLightItalic'), url('../fonts/gilroy/Gilroy-UltraLightItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-UltraLightItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-UltraLightItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-UltraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-LightItalic.eot');
+  src: local('Gilroy Light Italic'), local('../fonts/gilroy/Gilroy-LightItalic'), url('../fonts/gilroy/Gilroy-LightItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-LightItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-LightItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Heavy.eot');
+  src: local('Gilroy Heavy'), local('../fonts/gilroy/Gilroy-Heavy'), url('../fonts/gilroy/Gilroy-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Heavy.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Heavy.woff') format('woff'), url('../fonts/gilroy/Gilroy-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-Thin.eot');
+  src: local('Gilroy Thin'), local('../fonts/gilroy/Gilroy-Thin'), url('../fonts/gilroy/Gilroy-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-Thin.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-Thin.woff') format('woff'), url('../fonts/gilroy/Gilroy-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy/Gilroy-ThinItalic.eot');
+  src: local('Gilroy Thin Italic'), local('../fonts/gilroy/Gilroy-ThinItalic'), url('../fonts/gilroy/Gilroy-ThinItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/gilroy/Gilroy-ThinItalic.woff2') format('woff2'), url('../fonts/gilroy/Gilroy-ThinItalic.woff') format('woff'), url('../fonts/gilroy/Gilroy-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Hairline'), local('Montserrat-Hairline'), url('../fonts/montserrat/montserrathairline.woff2') format('woff2'), url('../fonts/montserrat/montserrathairline.woff') format('woff'), url('../fonts/montserrat/montserrathairline.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Light'), local('Montserrat-Light'), url('../fonts/montserrat/montserratlight.woff2') format('woff2'), url('../fonts/montserrat/montserratlight.woff') format('woff'), url('../fonts/montserrat/montserratlight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), local('Montserrat-Regular'), url('../fonts/montserrat/montserrat.woff2') format('woff2'), url('../fonts/montserrat/montserrat.woff') format('woff'), url('../fonts/montserrat/montserrat.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url('../fonts/montserrat/montserratbold.woff2') format('woff2'), url('../fonts/montserrat/montserratbold.woff') format('woff'), url('../fonts/montserrat/montserratbold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Black'), local('Montserrat-Black'), url('../fonts/montserrat/montserratblack.woff2') format('woff2'), url('../fonts/montserrat/montserratblack.woff') format('woff'), url('../fonts/montserrat/montserratblack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('../fonts/roboto/Robotothin.woff2') format('woff2'), url('../fonts/roboto/Robotothin.woff') format('woff'), url('../fonts/roboto/Robotothin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url('../fonts/roboto/Robotothinitalic.woff2') format('woff2'), url('../fonts/roboto/Robotothinitalic.woff') format('woff'), url('../fonts/roboto/Robotothinitalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Light'), local('Roboto-Light'), url('../fonts/roboto/Robotolight.woff2') format('woff2'), url('../fonts/roboto/Robotolight.woff') format('woff'), url('../fonts/roboto/Robotolight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url('../fonts/roboto/Robotolightitalic.woff2') format('woff2'), url('../fonts/roboto/Robotolightitalic.woff') format('woff'), url('../fonts/roboto/Robotolightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), local('Roboto-Regular'), url('../fonts/roboto/Roboto.woff2') format('woff2'), url('../fonts/roboto/Roboto.woff') format('woff'), url('../fonts/roboto/Roboto.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Italic'), local('Roboto-Italic'), url('../fonts/roboto/Robotoitalic.woff2') format('woff2'), url('../fonts/roboto/Robotoitalic.woff') format('woff'), url('../fonts/roboto/Robotoitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/roboto/Robotomedium.woff2') format('woff2'), url('../fonts/roboto/Robotomedium.woff') format('woff'), url('../fonts/roboto/Robotomedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url('../fonts/roboto/Robotomediumitalic.woff2') format('woff2'), url('../fonts/roboto/Robotomediumitalic.woff') format('woff'), url('../fonts/roboto/Robotomediumitalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Bold'), local('Roboto-Bold'), url('../fonts/roboto/Robotobold.woff2') format('woff2'), url('../fonts/roboto/Robotobold.woff') format('woff'), url('../fonts/roboto/Robotobold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url('../fonts/roboto/Robotobolditalic.woff2') format('woff2'), url('../fonts/roboto/Robotobolditalic.woff') format('woff'), url('../fonts/roboto/Robotobolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Black'), local('Roboto-Black'), url('../fonts/roboto/Robotoblack.woff2') format('woff2'), url('../fonts/roboto/Robotoblack.woff') format('woff'), url('../fonts/roboto/Robotoblack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url('../fonts/roboto/Robotoblackitalic.woff2') format('woff2'), url('../fonts/roboto/Robotoblackitalic.woff') format('woff'), url('../fonts/roboto/Robotoblackitalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+body {
+  margin: 0;
+}
+/**
+   * Render the `main` element consistently in IE.
+   */
+main {
+  display: block;
+}
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+a {
+  background-color: transparent;
+}
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+b,
+strong {
+  font-weight: bolder;
+}
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/**
+   * Add the correct font size in all browsers.
+   */
+small {
+  font-size: 80%;
+}
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+img {
+  border-style: none;
+}
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+   * Correct the padding in Firefox.
+   */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+progress {
+  vertical-align: baseline;
+}
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+textarea {
+  overflow: auto;
+}
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+details {
+  display: block;
+}
+/*
+   * Add the correct display in all browsers.
+   */
+summary {
+  display: list-item;
+}
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+template {
+  display: none;
+}
+/**
+   * Add the correct display in IE 10.
+   */
+[hidden] {
+  display: none;
+}
+/*==============================================================
+*											  	BREAKPOINTS
+=============================================================== */
+/*==============================================================
+*											  	COLS PADDING
+=============================================================== */
+/*==============================================================
+*												SECTION PADDING
+=============================================================== */
+/*==============================================================
+*												  GRID CLASSES
+=============================================================== */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1279.9px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (max-width: 1279.9px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 1023.9px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 991.9px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 767.9px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 575.9px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: calc(-20px * 2);
+  position: relative;
+}
+@media (max-width: 1279.9px) {
+  .row {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: calc(-20px * 2);
+  }
+}
+@media (max-width: 1023.9px) {
+  .row {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: calc(-20px * 2);
+  }
+}
+@media (max-width: 991.9px) {
+  .row {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: calc(-20px * 2);
+  }
+}
+@media (max-width: 767.9px) {
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: calc(-15px * 2);
+  }
+}
+@media (max-width: 575.9px) {
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: calc(-15px * 2);
+  }
+}
+.row > * {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: calc(20px * 2);
+}
+@media (max-width: 1279.9px) {
+  .row > * {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: calc(20px * 2);
+  }
+}
+@media (max-width: 1023.9px) {
+  .row > * {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: calc(20px * 2);
+  }
+}
+@media (max-width: 991.9px) {
+  .row > * {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: calc(20px * 2);
+  }
+}
+@media (max-width: 767.9px) {
+  .row > * {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: calc(15px * 2);
+  }
+}
+@media (max-width: 575.9px) {
+  .row > * {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: calc(15px * 2);
+  }
+}
+/*==============================================================
+*												  SECTION
+=============================================================== */
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (max-width: 1279.9px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 1023.9px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 991.9px) {
+  .section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 767.9px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 575.9px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.mt-section {
+  margin-top: 80px;
+}
+@media (max-width: 1279.9px) {
+  .mt-section {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 1023.9px) {
+  .mt-section {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 991.9px) {
+  .mt-section {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 767.9px) {
+  .mt-section {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 575.9px) {
+  .mt-section {
+    margin-top: 50px;
+  }
+}
+.mb-section {
+  margin-bottom: 80px;
+}
+@media (max-width: 1279.9px) {
+  .mb-section {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 1023.9px) {
+  .mb-section {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 991.9px) {
+  .mb-section {
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 767.9px) {
+  .mb-section {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 575.9px) {
+  .mb-section {
+    margin-bottom: 50px;
+  }
+}
+.pt-section {
+  padding-top: 80px;
+}
+@media (max-width: 1279.9px) {
+  .pt-section {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 1023.9px) {
+  .pt-section {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 991.9px) {
+  .pt-section {
+    padding-top: 70px;
+  }
+}
+@media (max-width: 767.9px) {
+  .pt-section {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 575.9px) {
+  .pt-section {
+    padding-top: 50px;
+  }
+}
+.pb-section,
+.main-content {
+  padding-bottom: 80px;
+}
+@media (max-width: 1279.9px) {
+  .pb-section,
+  .main-content {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 1023.9px) {
+  .pb-section,
+  .main-content {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 991.9px) {
+  .pb-section,
+  .main-content {
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 767.9px) {
+  .pb-section,
+  .main-content {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 575.9px) {
+  .pb-section,
+  .main-content {
+    padding-bottom: 50px;
+  }
+}
+body {
+  font-family: "roboto";
+  font-size: 14px;
+  font-weight: normal;
+}
+a,
+a:visited {
+  color: #000;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
+a.bnt,
+.btn,
+button.btn,
+input.btn,
+.wpcf7-submit.btn {
+  border: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+a.bnt:focus,
+.btn:focus,
+button.btn:focus,
+input.btn:focus,
+.wpcf7-submit.btn:focus {
+  outline: none;
+}
+::-moz-selection {
+  background-color: rgba(255, 95, 15, 0.8);
+  color: #fff;
+}
+::selection {
+  background-color: rgba(255, 95, 15, 0.8);
+  color: #fff;
+}
+.site-wrap {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.site-wrap > * {
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.site-wrap .footer {
+  margin-top: auto;
+}
+.ico {
+  width: 24px;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.ico > * {
+  width: 22px !important;
+  height: auto !important;
+}
+.ico.ico-life > * {
+  width: auto !important;
+  height: 26px !important;
+}
+.ico-left {
+  position: relative;
+  padding-left: 34px;
+}
+.ico-left .ico {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 24px / 2);
+}
+.svg-fill,
+.svg-stroke {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.opacity-load {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+html {
+  margin-top: 0 !important;
+}
+body.admin-bar {
+  padding-top: 32px;
+}
+body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
+  padding-top: 32px;
+}
+.dom-slider {
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  width: 100%;
+}
+.dom-slider .draggable {
+  cursor: -webkit-grab;
+  cursor: grab;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.dom-slider .draggable.in-drag {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+.dom-slider.init {
+  opacity: 1;
+}
+.dom-slider .slider-arrow {
+  width: 45px;
+  height: 45px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: transparent;
+  border: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 45px / 2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: ceter;
+      -ms-flex-pack: ceter;
+          justify-content: ceter;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.dom-slider .slider-arrow:after {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 0;
+  padding-bottom: 2px;
+}
+.dom-slider .slider-arrow:focus {
+  outline: none;
+}
+.dom-slider .prev-arrow {
+  left: 10px;
+}
+.dom-slider .prev-arrow:after {
+  content: "<";
+}
+.dom-slider .next-arrow {
+  right: 10px;
+}
+.dom-slider .next-arrow:after {
+  content: ">";
+}
+.dom-slider .slider-outher {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  will-change: transform;
+}
+.dom-slider .slide {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+.dom-slider .slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.dom-slider .slide-dot {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 0;
+  display: block;
+  margin: 0 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.dom-slider .slide-dot:focus {
+  outline: none;
+}
+.dom-slider .slide-dot.active-dot {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  background-color: #fff;
+}
+/*==============================================================
+*												TEST SLIDER CSS
+=============================================================== */
+.test-slider {
+  margin-bottom: 100px;
+}
+.test-slider:last-child {
+  margin-bottom: 0;
+}
+.test-slider .slider-item {
+  padding: 0;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+.test-slider .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.test-slider .title {
+  position: relative;
+  z-index: 1;
+}
+.test-slider .slide .slider-item {
+  height: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.test-slider .slide .slider-item,
+.test-slider .slide .bg {
+  background-color: sienna;
+}
+.test-slider .slide:first-child .slider-item,
+.test-slider .slide:first-child .bg {
+  background-color: purple;
+}
+.test-slider .slide:nth-child(2n) .slider-item,
+.test-slider .slide:nth-child(2n) .bg {
+  background-color: seagreen;
+}
+.test-slider .slide:nth-child(3n) .slider-item,
+.test-slider .slide:nth-child(3n) .bg {
+  background-color: yellow;
+}
+.test-slider .slide:nth-child(4n) .slider-item,
+.test-slider .slide:nth-child(4n) .bg {
+  background-color: orangered;
+}
+.test-slider .slide:nth-child(5n) .slider-item,
+.test-slider .slide:nth-child(5n) .bg {
+  background-color: orchid;
+}
+.test-slider .slide:nth-child(6n) .slider-item,
+.test-slider .slide:nth-child(6n) .bg {
+  background-color: rebeccapurple;
+}
+.test-slider .slide:nth-child(7n) .slider-item,
+.test-slider .slide:nth-child(7n) .bg {
+  background-color: seagreen;
+}
+.test-slider .slide:nth-child(8n) .slider-item,
+.test-slider .slide:nth-child(8n) .bg {
+  background-color: pugoldenrodrple;
+}
+.test-slider .slide:nth-child(9n) .slider-item,
+.test-slider .slide:nth-child(9n) .bg {
+  background-color: lawngreen;
+}
+.animate-dom-slider .slider-item {
+  background-color: transparent !important;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=main.min.css.map*/

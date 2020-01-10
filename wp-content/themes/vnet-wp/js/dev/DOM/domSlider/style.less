@@ -1,0 +1,222 @@
+.dom-slider {
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  position: relative;
+  width: 100%;
+
+  .draggable {
+    cursor: grab;
+    user-select: none;
+    &.in-drag {
+      cursor: grabbing;
+    }
+  }
+
+  &.init {
+    opacity: 1;
+  }
+
+  .slider-arrow {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 45px / 2);
+    display: flex;
+    align-items: center;
+    justify-content: ceter;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    &:after {
+      display: block;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 0;
+      padding-bottom: 2px;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .prev-arrow {
+    left: 10px;
+    &:after {
+      content: "<";
+    }
+  }
+  .next-arrow {
+    right: 10px;
+    &:after {
+      content: ">";
+    }
+  }
+
+  .slider-outher {
+    width: auto;
+    display: flex;
+    align-items: stretch;
+    will-change: transform;
+  }
+  .slide {
+    // transition: 1s;
+    flex-shrink: 0;
+    flex-grow: 0;
+    // opacity: 0;
+    // &.current-slide {
+      // opacity: 1;
+    // }
+    // overflow: hidden;
+  }
+
+  .slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-dot {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 0;
+    display: block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:focus {
+      outline: none;
+    }
+
+    &.active-dot {
+      transform: scale(1.2);
+      background-color: #fff;
+    }
+  }
+}
+
+/*==============================================================
+*												TEST SLIDER CSS
+=============================================================== */
+.test-slider {
+  margin-bottom: 100px;
+  // width: 100vw;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .slider-item {
+    padding: 0;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    // border: 1px solid #000;
+    position: relative;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slide {
+    .slider-item {
+      height: 40vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-item,
+    .bg {
+      background-color: sienna;
+    }
+    &:first-child {
+      .slider-item,
+      .bg {
+        background-color: purple;
+      }
+    }
+    &:nth-child(2n) {
+      .slider-item,
+      .bg {
+        background-color: seagreen;
+      }
+    }
+    &:nth-child(3n) {
+      .slider-item,
+      .bg {
+        background-color: yellow;
+      }
+    }
+    &:nth-child(4n) {
+      .slider-item,
+      .bg {
+        background-color: orangered;
+      }
+    }
+    &:nth-child(5n) {
+      .slider-item,
+      .bg {
+        background-color: orchid;
+      }
+    }
+    &:nth-child(6n) {
+      .slider-item,
+      .bg {
+        background-color: rebeccapurple;
+      }
+    }
+    &:nth-child(7n) {
+      .slider-item,
+      .bg {
+        background-color: seagreen;
+      }
+    }
+    &:nth-child(8n) {
+      .slider-item,
+      .bg {
+        background-color: pugoldenrodrple;
+      }
+    }
+    &:nth-child(9n) {
+      .slider-item,
+      .bg {
+        background-color: lawngreen;
+      }
+    }
+  }
+}
+
+.animate-dom-slider {
+  .slider-item {
+    background-color: transparent !important;
+    overflow: hidden;
+  }
+}
