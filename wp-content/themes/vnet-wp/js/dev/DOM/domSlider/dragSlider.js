@@ -20,8 +20,13 @@ export const dragSlider = ({ obj }) => {
   obj.dragEv.mouseUp = mouseUp;
   obj.dragEv.mouseMove = mouseMove;
 
+  obj.dragEv.preventDrag = preventDrag;
+
+
   if (obj.sets.draggable) {
     dom.addClass(obj.outher, 'draggable');
+
+    obj.outher.addEventListener('dragstart', obj.dragEv.preventDrag);
 
     obj.outher.addEventListener('mousedown', obj.dragEv.mouseDown);
 
@@ -115,6 +120,14 @@ export const dragSlider = ({ obj }) => {
     moveOuther({ obj, step });
   }
 
+
+
+  function preventDrag(e) {
+    if (e.target !== obj.outher) {
+      e.preventDefault();
+    }
+  }
+
 }
 
 
@@ -139,4 +152,5 @@ export const dragDestroy = ({ obj }) => {
   obj.outher.removeEventListener('touchstart', obj.dragEv.mouseDown);
   obj.outher.removeEventListener('touchend', obj.dragEv.mouseUp);
   obj.outher.removeEventListener('touchmove', obj.dragEv.mouseMove);
+  obj.outher.removeEventListener('dragstart', obj.dragEv.preventDrag);
 }

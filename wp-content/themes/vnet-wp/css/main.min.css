@@ -1167,6 +1167,158 @@ body.admin-bar {
 body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
   padding-top: 32px;
 }
+/*==============================================================
+*												TEST SLIDER CSS
+=============================================================== */
+.test-slider {
+  margin-bottom: 100px;
+}
+.test-slider:last-child {
+  margin-bottom: 0;
+}
+.test-slider .slider-item {
+  padding: 0;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+.test-slider .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.test-slider .title {
+  position: relative;
+  z-index: 1;
+}
+.test-slider .slide .slider-item {
+  height: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.test-slider .slide .slider-item,
+.test-slider .slide .bg {
+  background-color: sienna;
+}
+.test-slider .slide:first-child .slider-item,
+.test-slider .slide:first-child .bg {
+  background-color: purple;
+}
+.test-slider .slide:nth-child(2n) .slider-item,
+.test-slider .slide:nth-child(2n) .bg {
+  background-color: seagreen;
+}
+.test-slider .slide:nth-child(3n) .slider-item,
+.test-slider .slide:nth-child(3n) .bg {
+  background-color: yellow;
+}
+.test-slider .slide:nth-child(4n) .slider-item,
+.test-slider .slide:nth-child(4n) .bg {
+  background-color: orangered;
+}
+.test-slider .slide:nth-child(5n) .slider-item,
+.test-slider .slide:nth-child(5n) .bg {
+  background-color: orchid;
+}
+.test-slider .slide:nth-child(6n) .slider-item,
+.test-slider .slide:nth-child(6n) .bg {
+  background-color: rebeccapurple;
+}
+.test-slider .slide:nth-child(7n) .slider-item,
+.test-slider .slide:nth-child(7n) .bg {
+  background-color: seagreen;
+}
+.test-slider .slide:nth-child(8n) .slider-item,
+.test-slider .slide:nth-child(8n) .bg {
+  background-color: pugoldenrodrple;
+}
+.test-slider .slide:nth-child(9n) .slider-item,
+.test-slider .slide:nth-child(9n) .bg {
+  background-color: lawngreen;
+}
+.animate-dom-slider .slider-item {
+  background-color: transparent !important;
+  overflow: hidden;
+}
+.slider1-container {
+  background-color: #27282b;
+  margin-bottom: 120px;
+  -webkit-box-shadow: 0 0 40px #000000;
+          box-shadow: 0 0 40px #000000;
+}
+.slider1-container ::-moz-selection {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #27282b;
+}
+.slider1-container ::selection {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #27282b;
+}
+.slider1-container .slider-item {
+  position: relative;
+  height: 60vw;
+  min-height: 450px;
+  max-height: 920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+.slider1-container .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.slider1-container .bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider1-container .content {
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slider1-container .page-title {
+  margin: 0;
+  font-size: 92px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.slider1-container .page-subtitle {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 400;
+}
+.slider1-container .up-title {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.over-hide {
+  overflow: hidden;
+}
+.inline-block {
+  display: inline-block;
+}
 .dom-slider {
   overflow: hidden;
   opacity: 0;
@@ -1177,12 +1329,7 @@ body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
   width: 100%;
 }
 .dom-slider .draggable {
-  cursor: -webkit-grab;
-  cursor: grab;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  position: relative;
 }
 .dom-slider .draggable.in-drag {
   cursor: -webkit-grabbing;
@@ -1303,89 +1450,6 @@ body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
       -ms-transform: scale(1.2);
           transform: scale(1.2);
   background-color: #fff;
-}
-/*==============================================================
-*												TEST SLIDER CSS
-=============================================================== */
-.test-slider {
-  margin-bottom: 100px;
-}
-.test-slider:last-child {
-  margin-bottom: 0;
-}
-.test-slider .slider-item {
-  padding: 0;
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-}
-.test-slider .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.test-slider .title {
-  position: relative;
-  z-index: 1;
-}
-.test-slider .slide .slider-item {
-  height: 40vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.test-slider .slide .slider-item,
-.test-slider .slide .bg {
-  background-color: sienna;
-}
-.test-slider .slide:first-child .slider-item,
-.test-slider .slide:first-child .bg {
-  background-color: purple;
-}
-.test-slider .slide:nth-child(2n) .slider-item,
-.test-slider .slide:nth-child(2n) .bg {
-  background-color: seagreen;
-}
-.test-slider .slide:nth-child(3n) .slider-item,
-.test-slider .slide:nth-child(3n) .bg {
-  background-color: yellow;
-}
-.test-slider .slide:nth-child(4n) .slider-item,
-.test-slider .slide:nth-child(4n) .bg {
-  background-color: orangered;
-}
-.test-slider .slide:nth-child(5n) .slider-item,
-.test-slider .slide:nth-child(5n) .bg {
-  background-color: orchid;
-}
-.test-slider .slide:nth-child(6n) .slider-item,
-.test-slider .slide:nth-child(6n) .bg {
-  background-color: rebeccapurple;
-}
-.test-slider .slide:nth-child(7n) .slider-item,
-.test-slider .slide:nth-child(7n) .bg {
-  background-color: seagreen;
-}
-.test-slider .slide:nth-child(8n) .slider-item,
-.test-slider .slide:nth-child(8n) .bg {
-  background-color: pugoldenrodrple;
-}
-.test-slider .slide:nth-child(9n) .slider-item,
-.test-slider .slide:nth-child(9n) .bg {
-  background-color: lawngreen;
-}
-.animate-dom-slider .slider-item {
-  background-color: transparent !important;
-  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.min.css.map*/

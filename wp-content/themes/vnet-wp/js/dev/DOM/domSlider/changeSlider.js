@@ -71,9 +71,9 @@ export const changeSlider = ({ obj, noAnimation, after, inStart }) => {
 
 
 const dataAnimateSlider = ({ obj }) => {
+  if (!obj.animate) return;
   obj.inAnimation = false;
   let speed = obj.sets.speed / 2;
-
   obj.animate.forEach(item => {
     dom.removeClass(item.el, `${item.animateOut.join(' ')} ${item.animateIn.join(' ')} animated`);
     dom.removeCss(item.el, ['animation-delay']);

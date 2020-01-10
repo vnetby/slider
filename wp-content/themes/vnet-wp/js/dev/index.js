@@ -13,52 +13,8 @@ import { domSlider } from "./DOM/domSlider";
 
 const dinamicFunctions = wrap => {
   let sliders = domSlider(wrap, {
-    // dots: false,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
-    // infinite: true,
-    // draggable: true,
-    // swipe: true,
-    // dots: true,
-    // autoplay: false,
-    // pauseOnHover: true,
-    // animation: 'data-animate',
-    animationIn: ['flipInY', 'bounceIn', 'bounceInDown', 'bounceInUp'], /*  */
-    animationOut: ['flipOutY', 'bounceOut', 'bounceOutDown', 'bounceOutUp'], /*  */
-    // animationItem: '.slider-item', // aborted!
-    // animationItems: {
-    //   '.slider-item': ''
-    // },
-    // speed: 1000,
-    // autoplay: true,
-    beforeChange: ({ currentSlides, nextSlides }) => {
-      // console.log(currentSlides, nextSlides);
-    },
-    afterChange: ({ currentSlides, prevSlides }) => {
-      // console.log(currentSlides, prevSlides);
-    },
-    onPause: ({ obj }) => {
-      // console.log(obj);
-    },
-    onPlay: ({ obj }) => {
-      // console.log(obj);
-    }
-    // responsive: {
-    //   1200: {
-    //     slidesToShow: 2,
-    //     slidesToScroll: 2
-    //   },
-    //   992: {
-    //     slidesToShow: 2,
-    //     slidesToScroll: 1,
-    //     dots: false
-    //   },
-    //   768: {
-    //     slidesToShow: 1.4,
-    //     slidesToScroll: 1,
-    //     dots: true
-    //   }
-    // }
+    animationIn: ['flipInY', 'bounceIn', 'bounceInDown', 'bounceInUp'],
+    animationOut: ['flipOutY', 'bounceOut', 'bounceOutDown', 'bounceOutUp'],
   });
 
   let slider = sliders.getSliderById('firstSlider');
