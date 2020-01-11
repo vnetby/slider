@@ -1,12 +1,13 @@
 const fs = require("fs");
-const ABSPATH = "./wp-content/themes/ikeabel/assets/";
+const ABSPATH = "./wp-content/themes/vnet-wp/assets";
 
 const assets = [
   // "jquery3",
   "hamburgers",
   "animate-css",
-  "fancybox",
-  "parallax"
+  'codemirror'
+  // "fancybox",
+  // "parallax"
   // "overlay-scrollbar",
   // "chart-js",
 ];
@@ -28,6 +29,7 @@ const getFiles = (paths, ext) => {
     let res = "";
     paths.forEach(path => {
       let files = fs.readdirSync(`${ABSPATH}/${path}`);
+      console.log(files);
       files.forEach(file => {
         if (file.endsWith(`.${ext}`)) {
           res += fs.readFileSync(`${ABSPATH}/${path}/${file}`);

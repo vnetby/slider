@@ -1,4 +1,5 @@
-import {DOM} from './DOM';
+import { DOM } from './DOM';
+import "./css/DomTabs.less";
 
 
 export class DomTabs extends DOM {
@@ -15,6 +16,7 @@ export class DomTabs extends DOM {
 
   getElements ()  {
     this.links = this.findAll('.tab-link');
+    console.log(this);
     if ( !this.links || !this.links.length ) return false;
 
     this.tabs = [];

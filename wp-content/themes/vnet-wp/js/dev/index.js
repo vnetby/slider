@@ -10,15 +10,41 @@ import "@babel/polyfill";
 import "../../css/dev/main.less";
 
 import { domSlider } from "./DOM/domSlider";
+import { DomTabs } from "./DOM/DomTabs";
 
 const dinamicFunctions = wrap => {
+
+  // hljs.configure({
+  //   fixMarkup: true,
+  //   tabReplace: '     '
+  // });
+
+  new DomTabs(wrap);
+
+  dom.findAll('.highlight-code').map(item => {
+    let cm = CodeMirror.fromTextArea(item, {
+      value: item.value,
+      lineNumbers: true,
+      mode: 'htmlmixed',
+      theme: 'material-darker',
+      indentWithTabs: true,
+      scrollbarStyle: 'overlay',
+      matchTags: { bothTags: true },
+      extraKeys: { "Ctrl-J": "toMatchingTag" }
+    });
+    cm.execCommand('selectAll');
+    cm.execCommand('indentAuto');
+    cm.execCommand('goDocStart');
+  });
+
   let sliders = domSlider(wrap, {
     animationIn: ['flipInY', 'bounceIn', 'bounceInDown', 'bounceInUp'],
     animationOut: ['flipOutY', 'bounceOut', 'bounceOutDown', 'bounceOutUp'],
   });
 
+  let slider1 = sliders.getSliderById('slider1');
   let slider = sliders.getSliderById('firstSlider');
-
+  console.log(slider1);
   // slider.update({
   //   slidesToShow: 1,
   //   slidesToScroll: 1,
@@ -156,15 +182,6 @@ const dinamicFunctions = wrap => {
 
 
 const staticFunctions = wrap => {
-  // let slides = dom.findAll('.dom-slider');
-  // let firstChilds = dom.firstChild(slides);
-  // dom.addCss(firstChilds, { opacity: '.4' });
-  // dom.removeClass(firstChilds, 'draggable');
-  // dom.addClass(firstChilds, 'some class-name');
-  // let allChilds = dom.childs(firstChilds);
-  // let current = dom.findAll('.slider-item', allChilds);
-  // dom.remove(current);
-  // console.log(current);
 }
 
 

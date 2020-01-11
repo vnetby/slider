@@ -4,7 +4,7 @@
   "description": "vnetwp.vnetby.net",
   "main": "index.js",
   "scripts": {
-    "assets": "node wp-content/themes/vnetwp/assets/conf.js",
+    "assets": "node wp-content/themes/vnet-wp/assets/conf.js",
     "webpack": "webpack",
     "mysql": "mysqldump -u vadzim -pArrogaminca_1995# vnet_wp > /server/vnet_wp/dump_mysql.sql",
     "git": "git add ./ && git commit -m 'update' && git push -u origin master",

@@ -1451,5 +1451,8 @@ body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
           transform: scale(1.2);
   background-color: #fff;
 }
+.tab:not(.active) {
+  display: none;
+}
 
 /*# sourceMappingURL=main.min.css.map*/

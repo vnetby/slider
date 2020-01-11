@@ -36,13 +36,14 @@ get_header();
       'speed' => 1000,
       'dots' => true
     ];
+    ob_start();
     ?>
     <div class="dom-slider" id="slider1" data-slider-sets='<?= json_encode($sets); ?>'>
       <?php
       for ($i = 0; $i < 5; $i++) {
       ?>
         <div class="slider-item over-hide">
-          <div class="bg slider-animate" data-slider-in="fadeIn" data-slider-out="fadeOut">
+          <div class="bg slider-animate" data-animation-in="fadeIn" data-animation-duration="" data-animation-delay="" data-animation-out="fadeOut" data-slider-in="fadeIn" data-slider-out="fadeOut">
             <img src="<?= CURRENT_SRC; ?>img/slider1/0<?= $i + 1; ?>.jpg" alt="background">
           </div>
           <div class="content">
@@ -62,6 +63,26 @@ get_header();
       <?php
       }
       ?>
+    </div>
+
+    <?php
+    $slider = ob_get_clean();
+    echo $slider;
+    ?>
+
+    <div class="code-editor">
+      <div class="code-controls">
+        <a href="#slider1Html" class="html-btn tab-link active">HTML</a>
+        <a href="#slider1Js" class="html-btn tab-link">JS</a>
+      </div>
+      <div class="code-tabs">
+        <div class="tab active" id="slider1Html">
+          <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= $slider; ?></textarea>
+        </div>
+        <div class="tab" id="slider1Js">
+          <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= $slider; ?></textarea>
+        </div>
+      </div>
     </div>
   </div>
 
