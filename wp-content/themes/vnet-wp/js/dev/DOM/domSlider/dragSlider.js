@@ -67,7 +67,7 @@ export const dragSlider = ({ obj }) => {
     startX = 0;
     dom.removeClass(obj.outher, 'in-drag');
     setOutherSpeed({ obj });
-    changeSlider({ obj });
+    changeSlider({ obj, noAnimation: obj.sets.animation !== 'slider' });
   }
 
 

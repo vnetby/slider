@@ -5,9 +5,10 @@ import { dots, dotsDestroy } from "./dots.js";
 import { changeSlider } from "./changeSlider.js";
 import { dragSlider, dragDestroy } from "./dragSlider.js";
 import { autoplay, autoplayDestroy } from "./autoplay.js";
+import { dotsSlider, dotsSliderDestroy } from "./dotsSlider";
 
 import { setTotalSlides, setSteps, setStep, setOutherSpeed, setCurrentSlides, addSlidesActiveClass, setResponsiveSets, rmSlidesActiveClass, setElementsAnimation } from "./functions.js";
-import { setOutherHeight } from "./functions";
+import { setSliderHeight } from "./functions";
 
 let globalSets = {
   selector: '.dom-slider',
@@ -25,11 +26,14 @@ let globalSets = {
   nextArrow: 'default',
 
   variableWidth: false,
-  variableHeight: true,
+  variableHeight: false,
 
   dotsHTML: 'default',
-
+  changeOnDotHover: false,
   dots: false,
+
+  dotsSlider: false,
+  dotsSliderSets: { ...this, dotsSliderSets: null },
 
   draggable: true,
 
@@ -55,14 +59,20 @@ let globalSets = {
 
 
 
-export const domSlider = (wrap, argSets = {}) => {
+export const domSlider = (wrap, argSets = {}, isDotsSlider) => {
   globalSets = Object.assign(globalSets, argSets);
 
-  let container = dom.getContainer(wrap);
-  if (!container) return;
+  let sliders = [];
+  if (!isDotsSlider) {
+    let container = dom.getContainer(wrap);
+    if (!container) return;
 
-  let sliders = dom.findAll(globalSets.selector, container);
-  if (!sliders || !sliders.length) return;
+    sliders = dom.findAll(globalSets.selector, container);
+    if (!sliders || !sliders.length) return;
+  } else {
+    sliders = [wrap];
+  }
+
 
   let globalObj = {};
   globalObj.sliders = [];
@@ -77,7 +87,8 @@ export const domSlider = (wrap, argSets = {}) => {
       slider: slider,
       sets: sets,
       defSets: { ...sets },
-      responsive: { ...sets.responsive }
+      responsive: { ...sets.responsive },
+      domSlider: domSlider
     }
 
     setResponsiveSets({ obj });
@@ -121,14 +132,15 @@ const initSlider = ({ obj }) => {
 
   setElementsAnimation({ obj });
 
+
+  // setTimeout(() => {
   setSliderInititalState({ obj });
 
   setOnWindowResize({ obj });
 
-  setTimeout(() => {
-    setSlideWidth({ obj });
-    dom.addClass(obj.slider, 'init');
-  }, 20);
+  setSlideWidth({ obj });
+  dom.addClass(obj.slider, 'init');
+  // }, 20);
 
 }
 
@@ -147,13 +159,14 @@ const setSliderInititalState = ({ obj }) => {
   setSteps({ obj, total: obj.slides.length });
 
   setOutherSpeed({ obj });
-  setOutherHeight({ obj });
+  setSliderHeight({ obj });
+
 
   dragSlider({ obj });
   dots({ obj });
+  dotsSlider({ obj });
   arrows({ obj });
   autoplay({ obj });
-
 }
 
 
@@ -309,6 +322,7 @@ const updateSlider = ({ obj }) => {
 const destroySlider = ({ obj }) => {
   dragDestroy({ obj });
   dotsDestroy({ obj });
+  dotsSliderDestroy({ obj });
   arrowsDestroy({ obj });
   autoplayDestroy({ obj });
 }

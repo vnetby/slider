@@ -265,10 +265,15 @@ export const getTranslate = ({ obj }) => {
 
 
 
-export const setOutherHeight = ({ obj }) => {
+export const setSliderHeight = ({ obj }) => {
   if (!obj.sets.variableHeight) {
-    dom.addCss(obj.outher, { height: 'auto' });
+    dom.addCss(obj.slider, { height: 'auto' });
   } else {
-    console.log(obj);
+    dom.addClass(obj.slider, 'variable-height');
+    let height = 0;
+    obj.slides.filter((slide, i) => obj.currentSlides.indexOf(i) !== -1).forEach(slide => {
+      if (slide.offsetHeight > height) height = slide.offsetHeight;
+    });
+    dom.addCss(obj.slider, { 'height': `${height}px` });
   }
 }

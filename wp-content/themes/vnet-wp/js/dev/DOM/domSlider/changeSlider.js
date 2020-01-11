@@ -1,6 +1,6 @@
 import { getCurrentSlides, rmSlidesActiveClass, addSlidesActiveClass, getSlidesByStep, setCurrentSlides, setStep, setOutherSpeed, getStep, getPrevStep, getNextStep, getPrevSlides, getTranslate } from "./functions";
 import { rmActiveDotsClass, addActiveDotClass } from "./dots.js";
-
+import { setSliderHeight } from "./functions";
 
 export const changeSliderTo = ({ step, obj }) => {
 
@@ -35,6 +35,7 @@ export const changeSliderTo = ({ step, obj }) => {
 
 
 export const changeSlider = ({ obj, noAnimation, after, inStart }) => {
+  setSliderHeight({ obj });
   if (noAnimation) {
     dom.addCss(obj.outher, { 'transition-duration': '0s' });
     let translate = inStart ? 0 : getNextTranslate({ obj });
@@ -112,6 +113,8 @@ const slideSlider = ({ obj }) => {
   obj.inAnimation = false;
   let translate = getNextTranslate({ obj });
   translateOuther({ obj, translate });
+
+
 }
 
 
@@ -180,6 +183,9 @@ const fadeSlider = ({ obj }) => {
 
 const translateOuther = ({ obj, translate }) => {
   obj.outher.dataset.translate = translate;
+  obj.slideSliderInterval = setInterval(() => {
+    
+  }, 20);
   dom.addCss(obj.outher, { transform: `translateX(${translate}px)` });
 }
 

@@ -116,7 +116,10 @@ get_header();
       'animation' => 'fade',
       'arrows' => false,
       'infinite' => true,
-      'variableHeight' => true
+      'dotsSlider' => true,
+      'dotsSliderSets' => [
+        'slidesToShow' => 2
+      ]
     ];
     ob_start();
 
@@ -146,8 +149,7 @@ get_header();
       dots: true,
       dotsHTML: '#previewDots',
       arrows: false,
-      infinite: true,
-      variableHeight: true
+      infinite: true
     });
     EOL;
     $sliderLess = '';

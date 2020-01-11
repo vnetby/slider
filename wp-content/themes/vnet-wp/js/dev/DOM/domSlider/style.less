@@ -5,11 +5,7 @@
   position: relative;
   width: 100%;
 
-
-
   .draggable {
-    // cursor: grab;
-    // user-select: none;
     position: relative;
     &.in-drag {
       cursor: grabbing;
@@ -73,14 +69,8 @@
     will-change: transform;
   }
   .slide {
-    // transition: 1s;
     flex-shrink: 0;
     flex-grow: 0;
-    // opacity: 0;
-    // &.current-slide {
-      // opacity: 1;
-    // }
-    // overflow: hidden;
   }
 
   .slider-dots {
@@ -115,5 +105,11 @@
       background-color: #fff;
     }
   }
-}
 
+  &.variable-height {
+    .slider-outher {
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

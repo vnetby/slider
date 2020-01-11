@@ -404,6 +404,12 @@ export class DOM {
     });
   }
 
+  onMouseenter(selector, fn, where) {
+    this.getDomCollection(selector, where).forEach(item => {
+      item.addEventListener('mouseenter', fn);
+    });
+  }
+
 
 
 
