@@ -8,8 +8,6 @@ import { autoplay, autoplayDestroy } from "./autoplay.js";
 
 import { setTotalSlides, setSteps, setStep, setOutherSpeed, setCurrentSlides, addSlidesActiveClass, setResponsiveSets, rmSlidesActiveClass, setElementsAnimation } from "./functions.js";
 
-import { React } from "../domReact.js";
-
 let globalSets = {
   selector: '.dom-slider',
 

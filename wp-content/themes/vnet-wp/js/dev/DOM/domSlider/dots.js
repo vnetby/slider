@@ -11,11 +11,20 @@ export const dots = ({ obj }) => {
     dots = (<div className="slider-dots"></div>);
   } else {
     if (typeof obj.sets.dotsHTML === 'string') {
-      dots = dom.strToDom(obj.sets.dotsHTML);
+      dots = dom.findFirst(obj.sets.dotsHTML);
+      if (!dots) {
+        try {
+          dots = dom.strToDom(obj.sets.dotsHTML);
+          dots = dom.firstChild(dots);
+        } catch(err) {
+          
+        }
+      }
     } else {
       dots = obj.sets.dotsHTML;
     }
   }
+  if (!dots) return;
   obj.dots = dots;
   let totalSteps = getTotalSteps({ obj });
 
@@ -38,8 +47,16 @@ export const dots = ({ obj }) => {
 const initDots = ({ obj }) => {
   obj.dots.addEventListener('click', e => {
     e.preventDefault();
-    if (!e.target.hasAttribute('data-step')) return;
-    let step = parseInt(e.target.dataset.step);
+    let btn;
+    if (!e.path.some(item => {
+      if (dom.isDomEl(item) && item.hasAttribute('data-step')) {
+        btn = item;
+        return true;
+      }
+      return false;
+    })) return;
+    if (!btn) return;
+    let step = parseInt(btn.dataset.step);
     changeSliderTo({ step, obj });
   });
 }
@@ -54,11 +71,16 @@ export const dotsDestroy = ({ obj }) => {
 
 
 export const rmActiveDotsClass = ({ obj }) => {
-  dom.removeClass(dom.findAll('.slide-dot', obj.dots), 'active-dot');
+  if (!obj.dots) return;
+  let childs = dom.childs(obj.dots).forEach(dot => {
+    if (!dot.dataset.step) return;
+    dom.removeClass(dot, 'active-dot');
+  });
 }
 
 
 export const addActiveDotClass = ({ step, obj }) => {
+  if (!obj.dots) return;
   let dot = dom.findFirst(`*[data-step="${step}"]`, obj.dots);
   if (dot) {
     dom.addClass(dot, 'active-dot');

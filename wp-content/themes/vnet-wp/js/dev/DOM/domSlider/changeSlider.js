@@ -76,7 +76,7 @@ const dataAnimateSlider = ({ obj }) => {
   let speed = obj.sets.speed / 2;
   obj.animate.forEach(item => {
     dom.removeClass(item.el, `${item.animateOut.join(' ')} ${item.animateIn.join(' ')} animated`);
-    dom.removeCss(item.el, ['animation-delay']);
+    dom.removeCss(item.el, ['animation-delay', 'animation-duration', 'animation-fill-mode']);
 
     item.animations = item.animations ? item.animations : [];
     if (item.animations.length) {
@@ -84,29 +84,25 @@ const dataAnimateSlider = ({ obj }) => {
       item.animations = [];
     }
 
-
-    item.el.style.animationDelay = `${item.delayOut / 1000}s`;
-
+    dom.addCss(item.el, { 'animation-delay': `${item.delayOut / 1000}s`, 'animation-duration': `${item.durationOut / 1000}s` });
     let animation = getAnimation({ animationIn: item.animateIn, animationOut: item.animateOut });
     dom.addClass(item.el, `${animation[0]} animated`);
-
     item.animations.push(setTimeout(() => {
       let translate = getNextTranslate({ obj });
       translateOuther({ obj, translate });
 
       dom.removeClass(item.el, `${item.animateOut.join(' ')} animated`);
 
-      item.el.style.animationDelay = `${item.delayIn / 1000}s`;
+      dom.addCss(item.el, { 'animation-delay': `${item.delayIn / 1000}s`, 'animation-duration': `${item.durationIn / 1000}s` });
       dom.addClass(item.el, `${animation[1]} animated`);
 
       item.animations.push(setTimeout(() => {
-        dom.removeCss(item.el, ['animation-delay']);
+        dom.removeCss(item.el, ['animation-delay', 'animation-duration']);
         dom.removeClass(item.el, `${item.animateIn.join(' ')} animated`);
         item.animations = [];
       }, speed + item.delayIn));
 
     }, speed + item.delayOut));
-    // }, 20));
   });
 }
 

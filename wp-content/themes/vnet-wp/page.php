@@ -33,7 +33,7 @@ get_header();
       'animation' => 'data-animate',
       'draggable' => true,
       'infinite' => true,
-      'speed' => 1000,
+      'speed' => 1500,
       'dots' => true
     ];
     ob_start();
@@ -43,19 +43,19 @@ get_header();
       for ($i = 0; $i < 5; $i++) {
       ?>
         <div class="slider-item over-hide">
-          <div class="bg slider-animate" data-animation-in="fadeIn" data-animation-duration="" data-animation-delay="" data-animation-out="fadeOut" data-slider-in="fadeIn" data-slider-out="fadeOut">
+          <div class="bg slider-animate" data-animation-in="fadeIn" data-animation-out="fadeOut" data-animation-duration="500" data-animation-delay="100">
             <img src="<?= CURRENT_SRC; ?>img/slider1/0<?= $i + 1; ?>.jpg" alt="background">
           </div>
           <div class="content">
             <div class="up-title over-hide">
-              <span class="text slider-animate inline-block" data-slider-in="slideInUp" data-slider-out="slideOutDown" data-slider-delayin="500" data-slider-delayout="0">
+              <span class="text slider-animate inline-block" data-animation-in="slideInUp" data-animation-out="slideOutDown" data-animation-duration="300">
                 uptitle text
               </span>
             </div>
-            <h2 class="page-title slider-animate" data-slider-in="bounceIn, bounceInLeft, bounceInRight" data-slider-out="bounceOut, bounceOutRight, bounceOutLeft" data-slider-delayin="100" data-slider-delayout="100">
+            <h2 class="page-title slider-animate" data-animation-duration="500" data-animation-in="bounceIn, bounceInLeft, bounceInRight" data-animation-out="bounceOut, bounceOutRight, bounceOutLeft" data-animation-delay-in="0" data-animation-delay-out="300">
               Around the world
             </h2>
-            <h5 class="page-subtitle slider-animate inline-block" data-slider-in="zoomIn, flipInX, flipInY" data-slider-out="zoomOut, flipOutX, flipOutY">
+            <h5 class="page-subtitle slider-animate inline-block" data-animation-in="zoomIn, flipInX, flipInY" data-animation-out="zoomOut, flipOutX, flipOutY" data-animation-duration="300">
               some desription...
             </h5>
           </div>
@@ -103,7 +103,7 @@ get_header();
 
 
 
-  
+
 
 
 
@@ -111,11 +111,11 @@ get_header();
     <?php
     ob_start();
     ?>
-    <div class="dots">
+    <div class="preview-dots" id="previewDots">
       <?php
       for ($i = 0; $i < 4; $i++) {
       ?>
-        <div class="preview-dot" data-step="<?= $i; ?>">
+        <div class="preview-dot" data-step="<?= $i + 1; ?>">
           <img src="<?= CURRENT_SRC; ?>img/previewSlider/0<?= $i + 1; ?>-thumb.jpg" alt="thumbnail">
         </div>
       <?php
@@ -126,15 +126,17 @@ get_header();
     $dots = ob_get_clean();
     $sets = [
       'dots' => true,
-      'dotsHTML' => $dots,
+      // 'dotsHTML' => preg_replace("/[\s]+/u", " ", $dots),
+      'dotsHTML' => '#previewDots',
       'animation' => 'fade',
       'arrows' => false,
       'infinite' => true
     ];
+    ob_start();
+
     ?>
     <div class="dom-slider" data-slider-sets='<?= json_encode($sets); ?>'>
       <?php
-      ob_start();
 
       for ($i = 0; $i < 4; $i++) {
       ?>
@@ -144,18 +146,56 @@ get_header();
       <?php
       }
 
-      $slider = ob_get_clean();
-
-      echo $slider;
       ?>
+    </div>
 
+    <?php
+
+    echo $dots;
+
+    $slider = ob_get_clean();
+
+    $sliderJs = <<< EOL
+    let sliders = domSlider({
+      dots: true,
+      dotsHTML: '#previewDots',
+      arrows: false,
+      infinite: true
+    });
+    EOL;
+    $sliderLess = '';
+    $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/common.less');
+    $sliderLess .= "\r\n\r\n\r\n";
+    $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/previewSlider.less');
+
+    echo $slider;
+
+    ?>
+
+    <div class="code-editor has-tabs">
+      <div class="code-controls">
+        <a href="#previewSliderHtml" class="tab-link active">HTML</a>
+        <a href="#previewSliderJs" class="tab-link">JS</a>
+        <a href="#previewSliderLess" class="tab-link">LESS</a>
+      </div>
+      <div class="code-tabs">
+        <div id="previewSliderHtml" class="tab">
+          <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= preg_replace("/[\s]*data-slider-sets=\'[^\']+\'/u", "", $slider); ?></textarea>
+        </div>
+        <div id="previewSliderJs" class="tab">
+          <textarea class="html-tab html highlight-code" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
+        </div>
+        <div id="previewSliderLess" class="tab">
+          <textarea class="html-tab html highlight-code" data-mode="text/x-less" name="" id="" cols="30" rows="10"><?= $sliderLess; ?></textarea>
+        </div>
+      </div>
     </div>
 
   </div>
 
 
 
-  
+
 
 
   <div class="test-slider" id="testSlider">
@@ -165,8 +205,8 @@ get_header();
       for ($i = 0; $i < 8; $i++) {
       ?>
         <div class="slider-item">
-          <div class="bg slider-animate" data-slider-out="fadeOut" data-slider-in="fadeIn" data-duration-in="3000" data-duration-out="1000"></div>
-          <div class="title slider-animate" data-slider-in="bounceInUp, rotateIn, lightSpeedIn, bounceInDown" data-slider-out="bounceOutUp, bounceOut, bounceOutDown, fadeOutDown, rotateOut" data-slider-delayin="500">slide <?= $i + 1; ?></div>
+          <div class="bg slider-animate" data-animation-out="fadeOut" data-animation-in="fadeIn" data-duration-in="3000" data-duration-out="1000"></div>
+          <div class="title slider-animate" data-animation-in="bounceInUp, rotateIn, lightSpeedIn, bounceInDown" data-animation-out="bounceOutUp, bounceOut, bounceOutDown, fadeOutDown, rotateOut" data-animation-delayin="500">slide <?= $i + 1; ?></div>
         </div>
       <?php
       }
@@ -251,24 +291,26 @@ get_header();
 
     </div>
 
-  </div>
-
-
-  <div class="code-editor has-tabs">
-    <?php
-    $sliderJs = <<< EOL
+    <div class="code-editor has-tabs">
+      <?php
+      $sliderJs = <<< EOL
     let sliders = domSlider();
     EOL;
-    ?>
-    <div class="code-controls">
-      <a href="#testSliderJs" class="tab-link active">JS</a>
-    </div>
-    <div class="code-tabs">
-      <div id="testSliderJs" class="tab">
-        <textarea class="html-tab html highlight-code constructor-editor" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
+      ?>
+      <div class="code-controls">
+        <a href="#testSliderJs" class="tab-link active">JS</a>
+      </div>
+      <div class="code-tabs">
+        <div id="testSliderJs" class="tab">
+          <textarea class="html-tab html highlight-code constructor-editor" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
+        </div>
       </div>
     </div>
+
   </div>
+
+
+
 
 
 

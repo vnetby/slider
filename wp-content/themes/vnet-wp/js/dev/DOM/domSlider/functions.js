@@ -169,15 +169,17 @@ export const setElementsAnimation = ({ obj }) => {
   if (obj.sets.animation === 'data-animate') {
     let animate = dom.findAll('.slider-animate', obj.slides);
     if (!animate || !animate.length) return;
-    let duration = obj.sets.speed / 2 / 1000;
+    let defDuration = obj.sets.speed / 2;
+
     obj.animate = animate.map(el => {
-      el.style.animationDuration = duration + 's';
       return {
         el: el,
-        delayIn: el.dataset.sliderDelayin ? parseFloat(el.dataset.sliderDelayin) : 0,
-        delayOut: el.dataset.sliderDelayout ? parseFloat(el.dataset.sliderDelayout) : 0,
-        animateIn: el.dataset.sliderIn ? el.dataset.sliderIn.split(',').map(item => item.replace(/ /g, '')) : [],
-        animateOut: el.dataset.sliderIn ? el.dataset.sliderOut.split(',').map(item => item.replace(/ /g, '')) : []
+        delayIn: getElAnimationDelayIn({ el, def: 0 }),
+        delayOut: getElAnimationDelayOut({ el, def: 0 }),
+        animateIn: getElAnimationIn({ el }),
+        animateOut: getElAnimationOut({ el }),
+        durationIn: getElAnimationDurationIn({ el, def: defDuration }),
+        durationOut: getElAnimationDurationOut({ el, def: defDuration })
         // animations: []
       }
     });
@@ -186,6 +188,35 @@ export const setElementsAnimation = ({ obj }) => {
 }
 
 
+
+const getElAnimationDurationIn = ({ el, def }) => {
+  if (el.dataset.animationDurationIn) return parseFloat(el.dataset.animationDurationIn);
+  if (el.dataset.animationDuration) return parseFloat(el.dataset.animationDuration);
+  return parseFloat(def);
+}
+const getElAnimationDurationOut = ({ el, def }) => {
+  if (el.dataset.animationDurationOut) return parseFloat(el.dataset.animationDurationOut);
+  if (el.dataset.animationDuration) return parseFloat(el.dataset.animationDuration);
+  return parseFloat(def);
+}
+
+const getElAnimationDelayIn = ({ el, def }) => {
+  if (el.dataset.animationDelayIn) return parseFloat(el.dataset.animationDelayIn);
+  if (el.dataset.animationDelay) return parseFloat(el.dataset.animationDelay);
+  return parseFloat(def);
+}
+const getElAnimationDelayOut = ({ el, def }) => {
+  if (el.dataset.animationDelayOut) return parseFloat(el.dataset.animationDelayOut);
+  if (el.dataset.animationDelay) return parseFloat(el.dataset.animationDelay);
+  return parseFloat(def);
+}
+
+const getElAnimationIn = ({ el }) => {
+  return el.dataset.animationIn ? el.dataset.animationIn.split(',').map(item => item.replace(/ /g, '')) : ['no-animation'];
+}
+const getElAnimationOut = ({ el }) => {
+  return el.dataset.animationOut ? el.dataset.animationOut.split(',').map(item => item.replace(/ /g, '')) : ['no-animation'];
+}
 
 
 export const rmSlidesActiveClass = ({ obj }) => {
