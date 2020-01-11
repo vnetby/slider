@@ -1450,6 +1450,21 @@ body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.varwidth-slider img {
+  height: 60vw;
+  max-width: 100%;
+  max-height: 680px;
+  min-height: 420px;
+}
+.varwidth-slider .dom-slider .slider-item {
+  padding: 0 30px;
+}
+.varwidth-slider .dom-slider .slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+}
 /*==============================================================
 *												TEST SLIDER CSS
 =============================================================== */

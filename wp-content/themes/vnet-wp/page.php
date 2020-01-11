@@ -75,26 +75,12 @@ get_header();
     $sliderLess .= "\r\n\r\n\r\n";
     $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/slider1.less');
     echo $slider;
+    code_editor([
+      'html' => ['content' => $slider],
+      'js' => ['content' => $sliderJs],
+      'less' => ['content' => $sliderLess]
+    ]);
     ?>
-
-    <div class="code-editor has-tabs">
-      <div class="code-controls">
-        <a href="#slider1Html" class="tab-link active">HTML</a>
-        <a href="#slider1Js" class="tab-link">JS</a>
-        <a href="#slider1Less" class="tab-link">LESS</a>
-      </div>
-      <div class="code-tabs">
-        <div id="slider1Html" class="tab">
-          <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= $slider; ?></textarea>
-        </div>
-        <div id="slider1Js" class="tab">
-          <textarea class="html-tab html highlight-code" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
-        </div>
-        <div id="slider1Less" class="tab">
-          <textarea class="html-tab html highlight-code" data-mode="text/x-less" name="" id="" cols="30" rows="10"><?= $sliderLess; ?></textarea>
-        </div>
-      </div>
-    </div>
   </div>
 
 
@@ -126,11 +112,11 @@ get_header();
     $dots = ob_get_clean();
     $sets = [
       'dots' => true,
-      // 'dotsHTML' => preg_replace("/[\s]+/u", " ", $dots),
       'dotsHTML' => '#previewDots',
       'animation' => 'fade',
       'arrows' => false,
-      'infinite' => true
+      'infinite' => true,
+      'variableHeight' => true
     ];
     ob_start();
 
@@ -160,7 +146,57 @@ get_header();
       dots: true,
       dotsHTML: '#previewDots',
       arrows: false,
-      infinite: true
+      infinite: true,
+      variableHeight: true
+    });
+    EOL;
+    $sliderLess = '';
+    $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/common.less');
+    $sliderLess .= "\r\n\r\n\r\n";
+    $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/previewSlider.less');
+
+    echo $slider;
+    code_editor([
+      'html' => ['content' => preg_replace("/[\s]*data-slider-sets=\'[^\']+\'/u", "", $slider)],
+      'js' => ['content' => $sliderJs],
+      'less' => ['content' => $sliderLess]
+    ]);
+    ?>
+
+  </div>
+
+
+
+
+
+
+  <div class="varwidth-slider" id="varwithSlider">
+    <?php
+    $sets = [
+      'variableWidth' => true,
+      'dots' => true,
+      'arrows' => false
+    ];
+    ob_start();
+    ?>
+    <div class="dom-slider" data-slider-sets='<?= json_encode($sets); ?>'>
+      <?php
+      for ($i = 0; $i < 5; $i++) {
+      ?>
+        <div class="slider-item">
+          <img src="<?= CURRENT_SRC; ?>img/varwidthSlider/0<?= $i + 1; ?>.jpg" alt="variable width slider">
+        </div>
+      <?php
+      }
+      ?>
+    </div>
+    <?php
+    $slider = ob_get_clean();
+    $sliderJs = <<< EOL
+    let sliders = domSlider({
+     variableWidth: true,
+     dots: true,
+     arrows: false 
     });
     EOL;
     $sliderLess = '';
@@ -170,27 +206,12 @@ get_header();
 
     echo $slider;
 
+    code_editor([
+      'html' => ['content' => preg_replace("/[\s]*data-slider-sets=\'[^\']+\'/u", "", $slider)],
+      'js' => ['content' => $sliderJs],
+      'less' => ['content' => $sliderLess]
+    ]);
     ?>
-
-    <div class="code-editor has-tabs">
-      <div class="code-controls">
-        <a href="#previewSliderHtml" class="tab-link active">HTML</a>
-        <a href="#previewSliderJs" class="tab-link">JS</a>
-        <a href="#previewSliderLess" class="tab-link">LESS</a>
-      </div>
-      <div class="code-tabs">
-        <div id="previewSliderHtml" class="tab">
-          <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= preg_replace("/[\s]*data-slider-sets=\'[^\']+\'/u", "", $slider); ?></textarea>
-        </div>
-        <div id="previewSliderJs" class="tab">
-          <textarea class="html-tab html highlight-code" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
-        </div>
-        <div id="previewSliderLess" class="tab">
-          <textarea class="html-tab html highlight-code" data-mode="text/x-less" name="" id="" cols="30" rows="10"><?= $sliderLess; ?></textarea>
-        </div>
-      </div>
-    </div>
-
   </div>
 
 
@@ -290,22 +311,14 @@ get_header();
       </div>
 
     </div>
-
-    <div class="code-editor has-tabs">
-      <?php
-      $sliderJs = <<< EOL
+    <?php
+    $sliderJs = <<< EOL
     let sliders = domSlider();
     EOL;
-      ?>
-      <div class="code-controls">
-        <a href="#testSliderJs" class="tab-link active">JS</a>
-      </div>
-      <div class="code-tabs">
-        <div id="testSliderJs" class="tab">
-          <textarea class="html-tab html highlight-code constructor-editor" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
-        </div>
-      </div>
-    </div>
+    code_editor([
+      'js' => ['content' => $sliderJs, 'id' => 'testSliderJs', 'textareaClass' => 'constructor-editor']
+    ]);
+    ?>
 
   </div>
 

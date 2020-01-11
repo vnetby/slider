@@ -7,6 +7,7 @@ import { dragSlider, dragDestroy } from "./dragSlider.js";
 import { autoplay, autoplayDestroy } from "./autoplay.js";
 
 import { setTotalSlides, setSteps, setStep, setOutherSpeed, setCurrentSlides, addSlidesActiveClass, setResponsiveSets, rmSlidesActiveClass, setElementsAnimation } from "./functions.js";
+import { setOutherHeight } from "./functions";
 
 let globalSets = {
   selector: '.dom-slider',
@@ -23,13 +24,16 @@ let globalSets = {
   prevArrow: 'default',
   nextArrow: 'default',
 
+  variableWidth: false,
+  variableHeight: true,
+
   dotsHTML: 'default',
 
   dots: false,
 
   draggable: true,
 
-  animation: 'slider', // fade
+  animation: 'slider',
 
   pauseOnHover: false,
   slidesToShow: 1,
@@ -45,11 +49,7 @@ let globalSets = {
   afterChange: () => { },
 
   onPause: () => { },
-  onPlay: () => { },
-
-  afterInitEvent: 'dom-slide-init',
-  beforeChangeEvent: 'dom-slide-change-start',
-  afterChangeEvent: 'dom-slide-change-end'
+  onPlay: () => { }
 };
 
 
@@ -147,6 +147,7 @@ const setSliderInititalState = ({ obj }) => {
   setSteps({ obj, total: obj.slides.length });
 
   setOutherSpeed({ obj });
+  setOutherHeight({ obj });
 
   dragSlider({ obj });
   dots({ obj });
@@ -215,10 +216,13 @@ const setSlideWidth = ({ obj }) => {
   });
 }
 const realSetSlideWidth = ({ obj }) => {
-  let fullWidth = obj.slider.offsetWidth;
-  let width = fullWidth / obj.sets.slidesToShow;
-  dom.addCss(obj.slides, { width: `${width}px` });
-  // obj.slides.forEach(item => dom.addCss(item, { width: `${width}px` }));
+  if (obj.sets.variableWidth) {
+    dom.addCss(obj.slides, { width: `auto` });
+  } else {
+    let fullWidth = obj.slider.offsetWidth;
+    let width = fullWidth / obj.sets.slidesToShow;
+    dom.addCss(obj.slides, { width: `${width}px` });
+  }
 }
 
 

@@ -260,3 +260,15 @@ export const setResponsiveSets = ({ obj }) => {
 export const getTranslate = ({ obj }) => {
   return obj.outher.dataset.translate ? parseFloat(obj.outher.dataset.translate) : 0;
 }
+
+
+
+
+
+export const setOutherHeight = ({ obj }) => {
+  if (!obj.sets.variableHeight) {
+    dom.addCss(obj.outher, { height: 'auto' });
+  } else {
+    console.log(obj);
+  }
+}
