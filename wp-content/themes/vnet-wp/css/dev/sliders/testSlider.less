@@ -1,0 +1,160 @@
+.test-slider {
+  margin-bottom: 100px;
+  // width: 100vw;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .slider-item {
+    padding: 0;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    // border: 1px solid #000;
+    position: relative;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slide {
+    .slider-item {
+      height: 40vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-item,
+    .bg {
+      background-color: sienna;
+    }
+    &:first-child {
+      .slider-item,
+      .bg {
+        background-color: purple;
+      }
+    }
+    &:nth-child(2n) {
+      .slider-item,
+      .bg {
+        background-color: seagreen;
+      }
+    }
+    &:nth-child(3n) {
+      .slider-item,
+      .bg {
+        background-color: yellow;
+      }
+    }
+    &:nth-child(4n) {
+      .slider-item,
+      .bg {
+        background-color: orangered;
+      }
+    }
+    &:nth-child(5n) {
+      .slider-item,
+      .bg {
+        background-color: orchid;
+      }
+    }
+    &:nth-child(6n) {
+      .slider-item,
+      .bg {
+        background-color: rebeccapurple;
+      }
+    }
+    &:nth-child(7n) {
+      .slider-item,
+      .bg {
+        background-color: seagreen;
+      }
+    }
+    &:nth-child(8n) {
+      .slider-item,
+      .bg {
+        background-color: pugoldenrodrple;
+      }
+    }
+    &:nth-child(9n) {
+      .slider-item,
+      .bg {
+        background-color: lawngreen;
+      }
+    }
+  }
+}
+
+
+.sets-slider {
+  display: flex;
+  padding-top: 42px;
+  flex-wrap: wrap;
+  & > * {
+    width: calc(100% / 3);
+    padding: 10px 20px;
+  }
+
+
+
+  label {
+    display: block;
+    margin-bottom: 30px;
+    cursor: pointer;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .db-input {
+    display: flex;
+    justify-content: space-between;
+    label {
+      margin: 0;
+    }
+  }
+
+  input[type="button"] {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input, select {
+    padding: 5px 12px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[type="text"], input[type="number"], select {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #F78C6C;
+  }
+
+
+  .label {
+    user-select: none;
+    color: #C3E88D;
+    &.block {
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+}

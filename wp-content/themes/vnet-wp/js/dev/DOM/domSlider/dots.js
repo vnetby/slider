@@ -6,11 +6,23 @@ import { changeSliderTo } from "./changeSlider.js";
 export const dots = ({ obj }) => {
   if (!obj.sets.dots) return;
 
-  obj.dots = (<div className="slider-dots"></div>);
+  let dots;
+  if (obj.sets.dotsHTML === 'default') {
+    dots = (<div className="slider-dots"></div>);
+  } else {
+    if (typeof obj.sets.dotsHTML === 'string') {
+      dots = dom.strToDom(obj.sets.dotsHTML);
+    } else {
+      dots = obj.sets.dotsHTML;
+    }
+  }
+  obj.dots = dots;
   let totalSteps = getTotalSteps({ obj });
 
-  for (let i = 1; i <= totalSteps; i++) {
-    obj.dots.appendChild(<button type="button" className="slide-dot" data-step={i}></button>);
+  if (obj.sets.dotsHTML === 'default') {
+    for (let i = 1; i <= totalSteps; i++) {
+      obj.dots.appendChild(<button type="button" className="slide-dot" data-step={i}></button>);
+    }
   }
 
   appendControls({ item: obj.dots, wrap: obj.sets.appendDots, slider: obj.slider });
@@ -26,7 +38,7 @@ export const dots = ({ obj }) => {
 const initDots = ({ obj }) => {
   obj.dots.addEventListener('click', e => {
     e.preventDefault();
-    if (!e.target.classList.contains('slide-dot')) return;
+    if (!e.target.hasAttribute('data-step')) return;
     let step = parseInt(e.target.dataset.step);
     changeSliderTo({ step, obj });
   });

@@ -398,10 +398,17 @@ export class DOM {
 
 
 
+  onClick(selector, fn, where) {
+    this.getDomCollection(selector, where).forEach(item => {
+      item.addEventListener('click', fn);
+    });
+  }
+
+
 
 
   findAll(selector, where) {
-    
+
     let searchIn = [];
     if (this.isDomCollection(where)) {
       searchIn = where.map(item => this.__getWhere(item));
@@ -418,7 +425,7 @@ export class DOM {
     });
 
     // this.extend(res);
-    return res.length ? res : false;
+    return res;
   }
 
 
@@ -475,9 +482,17 @@ export class DOM {
 
 
 
-  getDomCollection(el) {
+  getDomCollection(el, where) {
     let res = [];
     if (!el) return res;
+    if (typeof el === 'string') {
+      try {
+        res = dom.findAll(el, this.__getWhere(where));
+      } catch (err) {
+        res = [];
+      }
+      return res;
+    }
     if (this.isDomCollection(el)) {
       res = el;
     } else {

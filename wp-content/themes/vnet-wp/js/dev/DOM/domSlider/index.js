@@ -25,6 +25,8 @@ let globalSets = {
   prevArrow: 'default',
   nextArrow: 'default',
 
+  dotsHTML: 'default',
+
   dots: false,
 
   draggable: true,

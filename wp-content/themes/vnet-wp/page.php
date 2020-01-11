@@ -67,29 +67,100 @@ get_header();
 
     <?php
     $slider = ob_get_clean();
+    $sliderJs = <<< EOL
+    let sliders = domSlider();
+    EOL;
+    $sliderLess = '';
+    $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/common.less');
+    $sliderLess .= "\r\n\r\n\r\n";
+    $sliderLess .= file_get_contents(CURRENT_PATH . 'css/dev/sliders/slider1.less');
     echo $slider;
     ?>
 
-    <div class="code-editor">
+    <div class="code-editor has-tabs">
       <div class="code-controls">
-        <a href="#slider1Html" class="html-btn tab-link active">HTML</a>
-        <a href="#slider1Js" class="html-btn tab-link">JS</a>
+        <a href="#slider1Html" class="tab-link active">HTML</a>
+        <a href="#slider1Js" class="tab-link">JS</a>
+        <a href="#slider1Less" class="tab-link">LESS</a>
       </div>
       <div class="code-tabs">
-        <div class="tab active" id="slider1Html">
+        <div id="slider1Html" class="tab">
           <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= $slider; ?></textarea>
         </div>
-        <div class="tab" id="slider1Js">
-          <textarea class="html-tab html highlight-code" name="" id="" cols="30" rows="10"><?= $slider; ?></textarea>
+        <div id="slider1Js" class="tab">
+          <textarea class="html-tab html highlight-code" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
+        </div>
+        <div id="slider1Less" class="tab">
+          <textarea class="html-tab html highlight-code" data-mode="text/x-less" name="" id="" cols="30" rows="10"><?= $sliderLess; ?></textarea>
         </div>
       </div>
     </div>
   </div>
 
 
-  <div class="test-slider">
 
-    <div class="dom-slider animate-dom-slider" id="firstSlider">
+
+
+
+
+  
+
+
+
+  <div class="preview-slider" id="previewSlider">
+    <?php
+    ob_start();
+    ?>
+    <div class="dots">
+      <?php
+      for ($i = 0; $i < 4; $i++) {
+      ?>
+        <div class="preview-dot" data-step="<?= $i; ?>">
+          <img src="<?= CURRENT_SRC; ?>img/previewSlider/0<?= $i + 1; ?>-thumb.jpg" alt="thumbnail">
+        </div>
+      <?php
+      }
+      ?>
+    </div>
+    <?php
+    $dots = ob_get_clean();
+    $sets = [
+      'dots' => true,
+      'dotsHTML' => $dots,
+      'animation' => 'fade',
+      'arrows' => false,
+      'infinite' => true
+    ];
+    ?>
+    <div class="dom-slider" data-slider-sets='<?= json_encode($sets); ?>'>
+      <?php
+      ob_start();
+
+      for ($i = 0; $i < 4; $i++) {
+      ?>
+        <div class="slider-item">
+          <img src="<?= CURRENT_SRC; ?>img/previewSlider/0<?= $i + 1; ?>.jpg" alt="fullimage">
+        </div>
+      <?php
+      }
+
+      $slider = ob_get_clean();
+
+      echo $slider;
+      ?>
+
+    </div>
+
+  </div>
+
+
+
+  
+
+
+  <div class="test-slider" id="testSlider">
+
+    <div class="dom-slider animate-dom-slider" id="testSlider">
       <?php
       for ($i = 0; $i < 8; $i++) {
       ?>
@@ -104,85 +175,107 @@ get_header();
 
     <div class="sets-slider">
 
-      <label for="slidesToShow">
-        <span class="label">Slides to Show:</span>
-        <input type="number" name="slidesToShow" id="slidesToShow" min="1" value="1" />
-      </label>
+      <div class="col">
+        <label for="slidesToShow">
+          <span class="label block">Slides to Show:</span>
+          <input type="number" name="slidesToShow" id="slidesToShow" min="1" value="1" />
+        </label>
+        <label for="slidesToScroll">
+          <span class="label block">Slides to scroll:</span>
+          <input type="number" name="slidesToScroll" id="slidesToScroll" min="1" value="1" />
+        </label>
+        <label for="animation">
+          <span class="label block">Animation:</span>
+          <select value="" name="animation" id="animation">
+            <option value="slider">slider</option>
+            <option value="fade">fade</option>
+            <option value="animate">animate</option>
+            <option value="data-animate">data-animate</option>
+          </select>
+        </label>
+      </div>
 
-      <label for="slidesToScroll">
-        <span class="label">Slides to scroll:</span>
-        <input type="number" name="slidesToScroll" id="slidesToScroll" min="1" value="1" />
-      </label>
+      <div class="col">
+        <label for="speed">
+          <span class="label block">Speed:</span>
+          <input type="number" name="speed" id="speed" min="1" value="600" />
+        </label>
+        <label for="infinite">
+          <span class="label">Infinite:</span>
+          <input type="checkbox" name="infinite" id="infinite" />
+        </label>
+        <label for="arrows">
+          <span class="label">Arrows:</span>
+          <input type="checkbox" name="arrows" id="arrows" checked />
+        </label>
+        <label for="dots">
+          <span class="label">Dots:</span>
+          <input type="checkbox" name="dots" id="dots" />
+        </label>
+        <label for="pauseOnHover">
+          <span class="label">Pause on hover:</span>
+          <input type="checkbox" name="pauseOnHover" id="pauseOnHover" />
+        </label>
+      </div>
 
-      <label for="speed">
-        <span class="label">Speed:</span>
-        <input type="number" name="speed" id="speed" min="1" value="600" />
-      </label>
+      <div class="col">
+        <label for="draggable">
+          <span class="label">Draggable:</span>
+          <input type="checkbox" name="draggable" id="draggable" checked />
+        </label>
+        <label for="swipe">
+          <span class="label">Swipe:</span>
+          <input type="checkbox" name="swipe" id="swipe" checked />
+        </label>
+        <label for="autoplay">
+          <span class="label">Autoplay:</span>
+          <input type="checkbox" name="autoplay" id="autoplay" />
+        </label>
 
-      <label for="infinite">
-        <span class="label">Infinite:</span>
-        <input type="checkbox" name="infinite" id="infinite" />
-      </label>
+        <label for="autoplaySpeed">
+          <span class="label block">Autoplay speed:</span>
+          <input type="number" name="autoplaySpeed" id="autoplaySpeed" min="1" value="3000" />
+        </label>
 
-      <label for="arrows">
-        <span class="label">Arrows:</span>
-        <input type="checkbox" name="arrows" id="arrows" checked />
-      </label>
+        <div class="db-input">
+          <label for="addSlide">
+            <input type="button" name="addSlide" id="addSlide" value="+ Add slide" />
+          </label>
 
-      <label for="dots">
-        <span class="label">Dots:</span>
-        <input type="checkbox" name="dots" id="dots" />
-      </label>
+          <label for="rmSlide">
+            <input type="button" name="rmSlide" id="rmSlide" value="- Remove slide" />
+          </label>
+        </div>
 
-      <label for="draggable">
-        <span class="label">Draggable:</span>
-        <input type="checkbox" name="draggable" id="draggable" checked />
-      </label>
-
-      <label for="swipe">
-        <span class="label">Swipe:</span>
-        <input type="checkbox" name="swipe" id="swipe" checked />
-      </label>
-
-      <label for="autoplay">
-        <span class="label">Autoplay:</span>
-        <input type="checkbox" name="autoplay" id="autoplay" />
-      </label>
-
-      <label for="autoplaySpeed">
-        <span class="label">Autoplay speed:</span>
-        <input type="number" name="autoplaySpeed" id="autoplaySpeed" min="1" value="3000" />
-      </label>
-
-      <label for="pauseOnHover">
-        <span class="label">Pause on hover:</span>
-        <input type="checkbox" name="pauseOnHover" id="pauseOnHover" checked />
-      </label>
-
-      <label for="animation">
-        <span class="label">Animation:</span>
-        <select value="" name="animation" id="animation">
-          <option value="slider">slider</option>
-          <option value="fade">fade</option>
-          <option value="animate">animate</option>
-          <option value="data-animate">data-animate</option>
-        </select>
-      </label>
-
-
-      <label for="addSlide">
-        <span class="label">Add slide:</span>
-        <input type="button" name="addSlide" id="addSlide" value="+" />
-      </label>
-
-      <label for="rmSlide">
-        <span class="label">Remove slide:</span>
-        <input type="button" name="rmSlide" id="rmSlide" value="-" />
-      </label>
+      </div>
 
     </div>
 
   </div>
+
+
+  <div class="code-editor has-tabs">
+    <?php
+    $sliderJs = <<< EOL
+    let sliders = domSlider();
+    EOL;
+    ?>
+    <div class="code-controls">
+      <a href="#testSliderJs" class="tab-link active">JS</a>
+    </div>
+    <div class="code-tabs">
+      <div id="testSliderJs" class="tab">
+        <textarea class="html-tab html highlight-code constructor-editor" data-mode="javascript" name="" id="" cols="30" rows="10"><?= $sliderJs; ?></textarea>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
 
 
 
