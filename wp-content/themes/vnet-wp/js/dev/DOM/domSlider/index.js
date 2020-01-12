@@ -13,6 +13,8 @@ import { setSliderHeight } from "./functions";
 let globalSets = {
   selector: '.dom-slider',
 
+  initOnOverflow: false,
+
   autoplay: false,
   autoplaySpeed: 3000,
 

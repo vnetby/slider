@@ -116,9 +116,10 @@ get_header();
       'animation' => 'fade',
       'arrows' => false,
       'infinite' => true,
-      'dotsSlider' => true,
+      'dotsSlider' => false,
       'dotsSliderSets' => [
-        'slidesToShow' => 2
+        'slidesToShow' => 5,
+        'initOnOverflow' => true
       ]
     ];
     ob_start();

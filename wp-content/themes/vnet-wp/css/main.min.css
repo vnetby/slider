@@ -1614,6 +1614,9 @@ body.admin-bar .dom-fixed-nav.nav-in-scroll .container .row {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.dom-slider .dots-slider {
+  display: block;
+}
 .dom-slider .slide-dot {
   -ms-flex-negative: 0;
       flex-shrink: 0;
